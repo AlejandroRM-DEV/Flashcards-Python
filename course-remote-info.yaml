@@ -17,13 +17,13 @@ stages:
   is_completed: true
 - id: 676
   step: 10809
-  is_completed: false
+  is_completed: true
 - id: 677
   step: 10810
-  is_completed: false
+  is_completed: true
 - id: 678
   step: 10811
-  is_completed: false
+  is_completed: true
 - id: 679
   step: 10812
   is_completed: false
