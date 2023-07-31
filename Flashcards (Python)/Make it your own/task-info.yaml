@@ -144,5 +144,8 @@ files:
         FlashcardsTest("flashcards.flashcards").run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/10808#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 31 Jul 2023 15:58:29 UTC"
 record: -1

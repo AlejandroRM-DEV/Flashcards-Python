@@ -4,17 +4,17 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: unittest
-update_date: "Sun, 30 Jul 2023 05:14:44 UTC"
+update_date: "Mon, 31 Jul 2023 15:46:59 UTC"
 stages:
 - id: 673
   step: 10806
   is_completed: true
 - id: 674
   step: 10807
-  is_completed: false
+  is_completed: true
 - id: 675
   step: 10808
-  is_completed: false
+  is_completed: true
 - id: 676
   step: 10809
   is_completed: false
@@ -214,10 +214,10 @@ topics:
     theory_id: 7452
   - title: Iterators
     theory_id: 8479
-  - title: Math functions
-    theory_id: 6256
   - title: Introduction to logging
     theory_id: 5538
+  - title: Math functions
+    theory_id: 6256
   - title: Ordering and total order
     theory_id: 9253
   - title: Logging
