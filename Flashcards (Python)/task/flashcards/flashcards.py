@@ -3,6 +3,7 @@ import random
 import sys
 from pathlib import Path
 from io import StringIO
+import argparse
 
 
 class Logger:
@@ -84,17 +85,19 @@ class Flashcards:
                                   f"but your definition is correct for {card_found['term']}")
                 card['mistakes'] = card['mistakes'] + 1
 
-    def export(self):
-        self.logger.write("File name:")
-        filename = self.logger.readline()
+    def export(self, filename = ""):
+        if not filename:
+            self.logger.write("File name:")
+            filename = self.logger.readline()
         with open(Path(filename), "w") as file:
             file.write(json.dumps(self.cards))
             self.logger.write(f"{len(self.cards)} cards have been saved")
 
-    def import_cards(self):
+    def import_cards(self, filename = ""):
         try:
-            self.logger.write("File name:")
-            filename = self.logger.readline()
+            if not filename:
+                self.logger.write("File name:")
+                filename = self.logger.readline()
             with open(Path(filename), "r") as file:
                 data = file.read()
                 self.cards = json.loads(data)
@@ -125,7 +128,6 @@ class Flashcards:
         else:
             self.logger.write(f"The hardest card is {','.join([c['term'] for c in highest_cards ])}. "
                   f"You have {highest} errors answering it")
-
 
     def reset(self):
         for card in self.cards:
@@ -160,7 +162,18 @@ class Flashcards:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--import_from", default="")
+    parser.add_argument("--export_to", default="")
+    args = parser.parse_args()
+
     flashcards = Flashcards()
+    if args.import_from:
+        flashcards.import_cards(args.import_from)
+
     flashcards.run()
+
+    if args.export_to:
+        flashcards.export(args.export_to)
 
 

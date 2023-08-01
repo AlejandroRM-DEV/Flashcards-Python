@@ -486,5 +486,9 @@ files:
         FlashcardsTest("flashcards.flashcards").run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/10812#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Tue, 01 Aug 2023 15:51:25 UTC"
+record: 7
